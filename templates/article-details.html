@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h2>{{ object.title }}</h2>
+        <p>Irta: {{ object.author }} - {{ object.date }}</p>
+        <p>{{ object.content }}</p>
+    </div>
+
+    <p><a href="{% url 'article-update' article.pk %}" class="btn btn-outline-primary">Update</a> <a href="{% url 'article-delete' article.pk %}" class="btn btn-outline-warning">Delete</a></p>
+    <p><a href="{% url 'article-list' %}" class="btn btn-outline-success">Back to the list</a></p>
+{% endblock %}
